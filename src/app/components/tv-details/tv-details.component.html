@@ -1,0 +1,27 @@
+<div class="container">
+    <h1>Series details</h1>
+    <div class="row">
+        @if(Series ===null)
+        {
+            <div class="mx-auto">
+                <div class="spinner-border mx-auto mt-5 text-center" role="status">
+                  </div>
+                  </div>
+        }
+        @else
+        {
+        <div class ="col-6 mx-auto my-4">
+            <div class="card" style="width: 18rem;">
+                <img [src]= "'https://image.tmdb.org/t/p/original/' + Series.poster_path " class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{Series.name}}</h5>
+                  <p class="card-text">{{Series.vote_average}}</p>
+                  @for (genre of Series.genres; track $index) {
+                    <span class="badge m-1 text-bg-info">{{ genre.name }}</span>
+                    }
+                </div>
+              </div>
+        </div>
+    }
+    </div>
+</div>
